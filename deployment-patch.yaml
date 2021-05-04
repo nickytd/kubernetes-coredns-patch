@@ -1,0 +1,13 @@
+spec:
+  template:
+    spec:
+      volumes:
+        - name: config-volume   
+          configMap:
+            name: coredns
+            defaultMode: 420
+            items:
+            - key: Corefile
+              path: Corefile
+            - key: local.dev.hosts
+              path: local.dev.hosts
