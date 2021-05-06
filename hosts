@@ -9,7 +9,5 @@ minikube_ip alertmanager.local.dev
 minikube_ip grafana.local.dev
 minikube_ip karma.local.dev
 minikube_ip blackbox-exporter.local.dev
-minikube_ip kiali.local.dev
-minikube_ip tracing.local.dev
-minikube_ip kubernetes-dashboard.local.dev
 minikube_ip thanos.local.dev
+minikube_ip dashboard.local.dev
