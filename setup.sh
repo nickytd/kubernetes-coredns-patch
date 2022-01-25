@@ -6,12 +6,20 @@ dir=$(dirname $0)
 
 echo "apply coredns patch"
 
-IP=$(minikube ip)
+IP=""
+if minikube status 2>&1 >/dev/null; then
+	IP=$(minikube ip)
+elif kind get clusters 2>&1 >/dev/null; then
+	IP=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' kind-control-plane)
+fi
+
 
 if [ -z $IP ]; then
-	echo "cannot get minikube ip"
+	echo "cannot get controle plane node ip"
 	exit 1
 fi
+
+echo "control-plane node ip: $IP"
 
 temp_dir=`mktemp -d`
 
