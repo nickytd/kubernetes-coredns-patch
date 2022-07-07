@@ -1,6 +1,6 @@
 ##
 # Host Database
-# to be inlinged with coredns config in minikube cluster
+# to be merged with coredns config in minikube cluster
 #
 minikube_ip prometheus.local.dev
 minikube_ip alertmanager.local.dev
@@ -11,4 +11,6 @@ minikube_ip thanos.local.dev
 minikube_ip dashboard.local.dev
 minikube_ip opensearch.local.dev
 minikube_ip os.local.dev
+minikube_ip os-only.local.dev
+minikube_ip opensearch-only.local.dev
 minikube_ip dex.local.dev
